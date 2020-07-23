@@ -1,5 +1,5 @@
 # dash tutorial sing alone
-# conda install plotly # does this work well? ==> yes
+# conda install dash # does this work well with all packages and all latest versions? ==> yes
 
 """
 import dash_core_components
