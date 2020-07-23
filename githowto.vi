@@ -1,0 +1,104 @@
+
+[TERMS]  
+git is local project folder based, 
+the folder contains a .git folder, you type cmd while in the local project folder.
+
+"remote" the online storage in github
+"branching", collaboration feature won't be used by me. always using master
+
+"push" means upload to remote
+"pull" means download from remote
+
+"add" + "commit":
+have to explicitly tell Git which changes you want to include in a commit before running the "git
+commit" command For a basic workflow, you can use the "git add" command to stage changes for the
+next commit. The actual commit command will then wrap up the mentioned changes in a new commit
+object:
+$ git add mynewfile.txt mynewfolder/anothernewfile.txt
+$ git commit -m "my message"
+
+If you have lots of changed files in your working copy - and want all of them included in the next
+commit - you can make use of the "-a" parameter and thereby omit the "git add" step:
+$ git commit -a -m "Change titles and styling on homepage"
+
+The git push command takes two arguments:
+A remote name, for example, origin
+A branch name, for example, master
+
+
+[+] downloaded "git desktop for windows", console cmds of git doesn't work
+however the GUI has convenient buttons to add all, commit all, push all.
+note, "add all" is implied, as all changes are listed and checkmarked on the left pane)
+
+[LINUX CONSOLE SETTING UP A PROJECT]
+[+] go to github website and manaully create a repository there first, otherwise, none of the below will work
+    in this example, say we create a repository with name "__pyp"
+
+[+] set up git folder on a new nix computer
+    $ mkdir __pyp # whereever you want it
+    $ cd __pyp
+    $ git init 
+        # this will create a .git folder in __pyp, which contains all git related configs
+        # note that, you need to have permission of this folder
+    $ git remote add origin https://github.com/mbhydro/__pyp.git
+
+    # if you screwed up, undo "add origin" by:
+    $ git remote remove origin
+    $ git remote add origin https://github.com/mbhydro/__pyp.git
+
+    # if you have code in the "__pyp" repository:
+    $ git pull origin master
+
+    # if "__pyp" is empty and you want to push something to it first, see next item
+
+[+] before you can push, 
+
+    # [1] user name
+    $ git config --global user.email "you@example.com"
+    $ git config --global user.name "Your Name"
+
+    # [2] need to commit first, before you can push
+    $ git add --all
+    $ git commit -m "asdfadsf"
+    $ git push -u origin master
+        # you will be prompted to input username and password here
+
+    $ git pull origin master
+        # git pull is a shortcut, which combines 'git fetch' and 'git merge'
+
+
+[LINUX CONSOLE DAILY USE]
+$ git push -u origin master # push always requires user credentials, see below on how to perm login
+$ git pull origin master # free as in freedom, so pull never needs credentials
+
+or make a .sh file:
+git add . && git commit -m 'd' && git push origin master
+
+
+[+] re download git project and over write local repository
+    git fetch --all
+    git reset --hard origin/master
+
+[+] clear git history nix
+    # Remove the history from local dir
+    $ rm -rf .git
+
+    # recreate the repos from the current content only
+    $ git init
+    $ git add .
+    $ git commit -m "Initial commit"
+
+    # push to the github remote repos ensuring you overwrite history
+    $ git remote add origin https://github.com/mbhydro/__pyp.git
+    $ git push -u --force origin master
+
+[PERMANENTLY AUTHENTICATE]
+$ git config credential.helper store
+$ git push https://github.com/mbhydro/__pyp.git
+    # after this you will be prompted username and password:
+Username for 'https://github.com': <USERNAME>
+Password for 'https://USERNAME@github.com': <PASSWORD>
+
+if you need to reset username and password:
+$ git config --global --unset credential.helper
+$ sudo git config --system --unset credential.helper
