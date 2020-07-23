@@ -1,0 +1,7 @@
+[0] different timestamps df, multi axis plot
+[1] align zero value axis
+[3] include events in txt in the time series plot. or any reasonable by pass that will follow the manipulation of the timeseries plot.
+
+
+EXTRA:
+exclude vim swp files from the git repository.
