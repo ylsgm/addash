@@ -1,7 +1,18 @@
-# dash tutorial sing alone
-# conda install dash # does this work well with all packages and all latest versions? ==> yes
-
 """
+INSTALLATIONS
+
+in cmd:
+$ conda install dash 
+    # all packages will be installed by this simple command.
+    # dash packages, flask, plotly, retry, all will be installed
+$ conda install -c conda-forge jupyterlab-plotly-extension 
+    # for jupyter plugin
+
+$ jupyter lab build
+    # enable the plug in.
+
+
+# to veryfy:
 import dash_core_components
 print(dash_core_components.__version__) # >> 1.13.3
 """
@@ -12,6 +23,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 
+# pd stuff
 import pandas as pd
 import numpy as np
 df = pd.DataFrame({"col0": [1, 2, 3], "SF": [4, 1, 2], "Montreal": [2, 4, 5]})
