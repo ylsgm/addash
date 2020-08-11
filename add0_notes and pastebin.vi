@@ -1,3 +1,23 @@
+[+] THE PYTHON VISUALIZATION landscepe
+PyViz, with PANEL, supported by Anaconda. you need to learn Bokeh for this.
+Voila, notebook straight to web app
+streamlit, very cool, but as of 2020, too young.
+
+however, all the above option will end up using matplotlib as the "actual plot generating" library.
+it is good in a sense that, in darthauto, we will need matplotlib anways. But it matplotlib doesn't
+have the cool interaction buildin by plotly
+
+Plotly is more mature, can be served to larger audience thru nginx and gunicorn if want to.
+supports julia r and python, so it has a larger audience. 
+better tutorial.
+Only stateless design in the bunch.
+
+**stateful vs stateless design and RESTful
+RESTful Web services allow the requesting systems to access and manipulate textual
+representations of Web resources by using a uniform and predefined set of stateless operations
+me think: stateful requires a session to be stored somewhere, stateless doesn't. stateless is more
+modern.
+
 [+] what is Plotly and Dash
 **Plotly
 is a Montreal company doing visualization. It publishes many software, Dash is one of them.
@@ -23,6 +43,7 @@ a javascript library for building user interface.
 **Node.js
 Node.js is an open-source, cross-platform, JavaScript runtime environment (Framework) that executes
 JavaScript code outside a web browser. 
+
 
 [+] Important kk_rr on Dash:
 https://plotly.com/python/figure-structure/
