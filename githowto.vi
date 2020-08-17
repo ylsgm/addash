@@ -40,11 +40,12 @@ note, "add all" is implied, as all changes are listed and checkmarked on the lef
     $ git init 
         # this will create a .git folder in __pyp, which contains all git related configs
         # note that, you need to have permission of this folder
-    $ git remote add origin https://github.com/mbhydro/__pyp.git
+    $ git remote add origin https://github.com/ylsgm/__pyp.git
 
     # if you screwed up, undo "add origin" by:
     $ git remote remove origin
-    $ git remote add origin https://github.com/mbhydro/__pyp.git
+    $ git remote add origin https://github.com/ylsgm/__pyp.git
+    
 
     # if you have code in the "__pyp" repository:
     $ git pull origin master
@@ -62,6 +63,8 @@ note, "add all" is implied, as all changes are listed and checkmarked on the lef
     $ git commit -m "asdfadsf"
     $ git push -u origin master
         # you will be prompted to input username and password here
+        # Message 'src refspec master does not match any' when pushing commits in Git
+        #   ==> usually due to not committing first.
 
     $ git pull origin master
         # git pull is a shortcut, which combines 'git fetch' and 'git merge'
@@ -74,7 +77,7 @@ $ git pull origin master # free as in freedom, so pull never needs credentials
 or make a .sh file:
 git add . && git commit -m 'd' && git push origin master
 
-
+[FORCE PULL or PUSH]
 [+] re download git project and over write local repository
     git fetch --all
     git reset --hard origin/master
@@ -89,12 +92,12 @@ git add . && git commit -m 'd' && git push origin master
     $ git commit -m "Initial commit"
 
     # push to the github remote repos ensuring you overwrite history
-    $ git remote add origin https://github.com/mbhydro/__pyp.git
+    $ git remote add origin https://github.com/ylsgm/__pyp.git
     $ git push -u --force origin master
 
 [PERMANENTLY AUTHENTICATE]
 $ git config credential.helper store
-$ git push https://github.com/mbhydro/__pyp.git
+$ git push https://github.com/ylsgm/__pyp.git
     # after this you will be prompted username and password:
 Username for 'https://github.com': <USERNAME>
 Password for 'https://USERNAME@github.com': <PASSWORD>
