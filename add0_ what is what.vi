@@ -1,6 +1,6 @@
 [+] THE PYTHON VISUALIZATION landscepe
 PyViz, with PANEL, supported by Anaconda. you need to learn Bokeh for this.
-Voila, notebook straight to web app
+Voila, notebook straight to web app. However I prefer to learn real webpage and website related stuff.
 streamlit, very cool, but as of 2020, too young.
 
 however, all the above option will end up using matplotlib as the "actual plot generating" library.
@@ -13,14 +13,22 @@ better tutorial.
 Only stateless design in the bunch.
 
 **stateful vs stateless design and RESTful
-RESTful Web services allow the requesting systems to access and manipulate textual
-representations of Web resources by using a uniform and predefined set of stateless operations
-me think: stateful requires a session to be stored somewhere, stateless doesn't. stateless is more
-modern.
+Representational state transfer (REST) is a software architectural style that defines a set of
+constraints to be used for creating Web services. Web services that conform to the REST
+architectural style, called RESTful Web services, provide interoperability between computer systems
+on the internet. RESTful Web services allow the requesting systems to access and manipulate textual
+representations of Web resources by using a uniform and predefined set of stateless operations.
+
+Server Restriction	In Stateless, server is not needed to keep the server information or session details to itself.	In stateful, a server is required to maintain the current state and session information.
+Dependency	In stateless, server and client are loosely coupled and can act independently.	In stateful, server and client are tightly bound.
+Design	Server design is simple to implement.	Server design is comparatively complex and difficult to implement.
+/**
 
 [+] what is Plotly and Dash
 **Plotly
 is a Montreal company doing visualization. It publishes many software, Dash is one of them.
+
+Plotly as software:
 I think plotly can be loosely refer to as the core javascript that dash builds on top of.
 
 **Dash
@@ -42,8 +50,9 @@ a javascript library for building user interface.
 
 **Node.js
 Node.js is an open-source, cross-platform, JavaScript runtime environment (Framework) that executes
-JavaScript code outside a web browser. 
+JavaScript code outside a web browser. So that Standlone Dash plot can be displayed even without browser.
 
+interestingly, Jupyter lab, which runs in browser, still needs Node.js to run dash plot inside.
 
 [+] Important kk_rr on Dash:
 https://plotly.com/python/figure-structure/
@@ -78,12 +87,4 @@ WSGI /Whisgi/ web server gate way interface
 don't entirely understand, but nginx is equivalent to apache, a web server, not even sure what a web server is.
 or why my python code is not handling hte web server part. WSGI is to interface between the web server and
 my ... pandas code? not sure what dash codes are, they are to assemble a html?
-
-
-[+] prerequisite
-Type sudo apt-get install openssh-server
-Enable the ssh service by typing sudo systemctl enable ssh
-Start the ssh service by typing sudo systemctl start ssh
-Ubuntu will automatically incorporate OpenSSH into the fire wall.
-
 

@@ -1,16 +1,23 @@
 """
 INSTALLATIONS
 
+~~ linux prerequisite
+Type sudo apt-get install openssh-server
+Enable the ssh service by typing sudo systemctl enable ssh
+Start the ssh service by typing sudo systemctl start ssh
+Ubuntu will automatically incorporate OpenSSH into the fire wall.
+~~/
+
 in cmd:
 $ conda install dash 
     # all packages will be installed by this simple command.
     # dash packages, flask, plotly, retry, all will be installed
+
 $ conda install -c conda-forge jupyterlab-plotly-extension 
     # for jupyter plugin
 
 $ jupyter lab build
     # enable the plug in.
-
 
 # to veryfy:
 import dash_core_components
