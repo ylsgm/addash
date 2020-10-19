@@ -1,0 +1,67 @@
+version: 1
+
+pwd: ./data
+
+yes_readEntireFolder: 1
+all txts in this folder will be read: data
+filename_inputPickle: data
+
+
+
+###########################################################################
+# pwd: Present Working Directory
+#   where, raw, pickles and outputs folder will be located
+
+
+# one of the part files in /raws: no longer used
+###########################################################################
+# Settings USED FOR READING TXTS
+
+# yes_readEntireFolder == 1:
+#   will read all files in a queryname folder inside the raw
+#   this is the recommended way now
+
+
+  # file structure should look like this:
+  # pwd / raws / subject
+
+  # pwd +
+  #     |____raws +
+  #               |____<query name> +
+  #                                 |____ <all txt files of a query>.txt
+
+  # because a query may contain many txt files, that's why we need to have a
+  # <query name> folder to contain all txt files
+
+#     this folder needs to be in 'raws'
+#     this folder will carry the name of the query
+#     all txts in the folder will be read in the sequenece of time modified
+#     all txts in the folder will be renamed "queryname_part##.txt"
+
+# yes_readEntireFolder == 0:
+#     this option is for really short period of historian data that all fits in one file
+#     will read all part files related to filename in folder 'raws'
+#     or will just read one file if the filename doesn't have '_part#'
+
+
+# if NOT yes_readEntireFolder:
+  # copy paste one of the _part.txt's filename here
+  # the code will determine all other part files.
+
+# if yes_readEntireFolder:
+# specify the queryname folder inside the "raws" folder
+
+# if read entire folder, then auto change filenames by datemodified
+# potential problem when we want to rearrange the order
+# only rename file if "_part#" is NOT present
+
+###########################################################################
+# the following is ONLY USED FOR data2excel and plotting
+
+# specify Pickle file to read
+#     no matter how you specified the txt files to read, all data will
+#     be pickled into the pickles folder
+
+#     plotting or converting to exel will find the pickled files in "pickles"
+
+
