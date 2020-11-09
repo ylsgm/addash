@@ -1,20 +1,35 @@
 version: 1
 
-pwd: ./data
+pwd: ./testSubject
+    # pwd +
+    #     |__  raws +
+    #               |__  <query name> +
+    #                                 |____ <all txt files of a query>.txt
 
 yes_readEntireFolder: 1
-all txts in this folder will be read: data
-filename_inputPickle: data
+all txts in this folder will be read: allunits
+filename_inputPickle: allunits
 
 
 
 ###########################################################################
-# pwd: Present Working Directory
-#   where, raw, pickles and outputs folder will be located
-
-
-# one of the part files in /raws: no longer used
+# pwd == "subject" or "what are we investigating today", 
+    # example: "KT_u0405mw"
+# <query name> == all txts from one single ihhist query, 
+    # example: kt U04's mws mwar gates, in 3 separate txts, lots of data due to long duration
 ###########################################################################
+
+
+
+
+
+
+
+
+
+
+
+# OLD NOTES:
 # Settings USED FOR READING TXTS
 
 # yes_readEntireFolder == 1:
@@ -22,13 +37,7 @@ filename_inputPickle: data
 #   this is the recommended way now
 
 
-  # file structure should look like this:
-  # pwd / raws / subject
 
-  # pwd +
-  #     |____raws +
-  #               |____<query name> +
-  #                                 |____ <all txt files of a query>.txt
 
   # because a query may contain many txt files, that's why we need to have a
   # <query name> folder to contain all txt files
