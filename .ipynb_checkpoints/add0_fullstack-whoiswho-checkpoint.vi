@@ -1,0 +1,93 @@
+[+] THE PYTHON VISUALIZATION landscepe
+PyViz, with PANEL, supported by Anaconda. you need to learn Bokeh for this.
+Voila, notebook straight to web app. However I prefer to learn real webpage and website related stuff.
+streamlit, very cool, but as of 2020, too young.
+
+however, all the above option will end up using matplotlib as the "actual plot generating" library.
+it is good in a sense that, in darthauto, we use lots of matplot. Another benefit of matplot is that
+jupyter will render it no problem. (2020-09 running into Node.j lastest version not supported by 
+anaconda and cant render plottly in jupyter) But it matplotlib doesn't have the cool interaction buildin by plotly
+
+Plotly is more mature, can be served to larger audience thru nginx and gunicorn if want to.
+supports julia r and python, so it has a larger audience. 
+better tutorial.
+Only stateless design in the bunch.
+
+**stateful vs stateless design and RESTful
+Representational state transfer (REST) is a software architectural style that defines a set of
+constraints to be used for creating Web services. Web services that conform to the REST
+architectural style, called RESTful Web services, provide interoperability between computer systems
+on the internet. RESTful Web services allow the requesting systems to access and manipulate textual
+representations of Web resources by using a uniform and predefined set of stateless operations.
+
+Server Restriction	In Stateless, server is not needed to keep the server information or session
+details to itself.	In stateful, a server is required to maintain the current state and session
+information.  Dependency	In stateless, server and client are loosely coupled and can act
+independently.	In stateful, server and client are tightly bound.  Design	Server design is simple
+to implement.	Server design is comparatively complex and difficult to implement.
+/**
+
+[+] what is Plotly and Dash
+**Plotly
+is a Montreal company doing visualization. It publishes many software, Dash is one of them.
+
+Plotly as software:
+I think plotly can be loosely refer to as the core javascript that dash builds on top of.
+
+**Dash
+is plotly's Python frame work for building web apps for plotting.
+The rendering process uses the Plotly.js JavaScript library under the hood.
+although Python developers using this. Figures can be represented in Python either as dicts or as
+instances of the plotly.graph_objects.Figure class, and are serialized as text in JavaScript Object
+Notation (JSON) before being passed to Plotly.js.
+
+Plotly's front end using JavaScript and the visualization library D3.js, HTML and CSS.
+
+**D3.js 
+(also known as D3, short for Data-Driven Documents) is a JavaScript library for producing dynamic,
+interactive data visualizations in web browsers. It makes use of Scalable Vector Graphics (SVG),
+HTML5, and Cascading Style Sheets (CSS) standards
+
+**React.js
+a javascript library for building user interface.
+
+**Node.js
+Node.js is an open-source, cross-platform, JavaScript runtime environment (Framework) that executes
+JavaScript code outside a web browser. So that Standlone Dash plot can be displayed even without browser.
+
+interestingly, Jupyter lab, which runs in browser, still needs Node.js to run dash plot inside.
+
+[+] Important kk_rr on Dash:
+https://plotly.com/python/figure-structure/
+the rest of the tutorials are good too
+
+[+] Comprehensive guide on web server hosting
+https://www.patricksoftwareblog.com/how-to-configure-nginx-for-a-flask-web-application/
+https://www.liquidweb.com/kb/what-is-wsgi/
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-20-04
+
+# multiple y axis plot, the last example
+https://plotly.com/python/multiple-axes/
+
+[+] Dash and Flask
+# Dash apps are web applications. Dash uses Flask as the web framework.
+# The underlying Flask app is available at app.server, that is:
+import dash
+app = dash.Dash(__name__)
+server = app.server # the Flask app
+
+# You can also pass your own flask app instance into Dash:
+import flask
+server = flask.Flask(__name__)
+app = dash.Dash(__name__, server=server)
+
+By exposing this server variable, you can deploy Dash apps like you would any Flask app.
+
+[TERMs]
+nginx /Engine-x/
+WSGI /Whisgi/ web server gate way interface
+don't entirely understand, but nginx is equivalent to apache, a web server, not even sure what a web server is.
+or why my python code is not handling hte web server part. WSGI is to interface between the web server and
+my ... pandas code? not sure what dash codes are, they are to assemble a html?
+
